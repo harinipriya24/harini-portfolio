@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { navItems, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import portrait from "@/assets/harini-portrait.png.asset.json";
 
 export function Navbar() {
   const [active, setActive] = useState("home");
