@@ -4,11 +4,9 @@ export const profile = {
   shortName: "Harini Priya",
   title: "AI & Full-Stack Developer",
   github: "https://github.com/harinipriya24",
-  linkedin: "https://www.linkedin.com/in/kakkerla-harini-priya/",
-  // TODO: replace with your real email address
-  email: "your.email@example.com",
-  // TODO: add your resume PDF to /public and set its path, e.g. "/resume.pdf"
-  resumeUrl: "",
+  linkedin: "https://www.linkedin.com/in/kakkerla-harini-priya-477371326/",
+  email: "harinipriyakakkerla@gmail.com",
+  resumeUrl: "/__l5e/assets-v1/2d23d387-863b-4e95-86e4-87d592cc70bc/Harini_Priya_Kakkerla_Resume.pdf",
 };
 
 export const navItems = [
