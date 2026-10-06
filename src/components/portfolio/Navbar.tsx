@@ -46,7 +46,7 @@ export function Navbar() {
           <img
             src={portrait.url}
             alt={profile.name}
-            className="h-9 w-9 rounded-full border border-border/60 object-cover shadow-soft"
+            className="h-10 w-10 rounded-full border border-border/60 object-cover shadow-soft transition-transform duration-300 hover:scale-105"
           />
           <span className="font-display text-2xl text-foreground">
             {profile.shortName}
