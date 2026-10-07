@@ -43,8 +43,10 @@ export function Resume() {
 export function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
@@ -57,8 +59,26 @@ export function Contact() {
       return;
     }
     setErrors({});
-    setSent(true);
-    form.reset();
+    setSendError("");
+    setSending(true);
+    try {
+      const resp = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(res.data),
+      });
+      if (!resp.ok) {
+        const body = (await resp.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(body?.error ?? "Could not send your message. Please try again.");
+      }
+      setSent(true);
+      form.reset();
+    } catch (err) {
+      setSent(false);
+      setSendError(err instanceof Error ? err.message : "Could not send your message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const field = (name: keyof Errors, label: string, type = "text") => (
@@ -112,12 +132,17 @@ export function Contact() {
               {field("email", "Email", "email")}
             </div>
             {field("message", "Message", "textarea")}
-            <button type="submit" className={cn(btn.primary, "justify-self-start")}>
-              <Send className="h-4 w-4" /> Send Message
+            <button type="submit" disabled={sending} className={cn(btn.primary, "justify-self-start disabled:opacity-60")}>
+              <Send className="h-4 w-4" /> {sending ? "Sending…" : "Send Message"}
             </button>
             {sent && (
               <p role="status" className="flex items-center gap-2 text-sm text-success animate-in fade-in">
                 <CheckCircle2 className="h-4 w-4" /> Thank you! Your message has been received.
+              </p>
+            )}
+            {sendError && (
+              <p role="alert" className="text-sm text-destructive animate-in fade-in">
+                {sendError}
               </p>
             )}
           </form>
