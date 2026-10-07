@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Resolve Lovable asset pointer paths through the shared asset URL helper before rendering links or media; external hosts do not serve Lovable's asset proxy.
