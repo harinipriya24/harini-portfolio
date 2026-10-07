@@ -1,3 +1,6 @@
+import resumeAsset from "@/assets/resume.pdf.asset.json";
+import { assetUrl } from "@/lib/asset-url";
+
 // Edit your personal links here.
 export const profile = {
   name: "Kakkerla Harini Priya",
@@ -6,7 +9,7 @@ export const profile = {
   github: "https://github.com/harinipriya24",
   linkedin: "https://www.linkedin.com/in/kakkerla-harini-priya-477371326/",
   email: "harinipriyakakkerla@gmail.com",
-  resumeUrl: "/__l5e/assets-v1/2d23d387-863b-4e95-86e4-87d592cc70bc/Harini_Priya_Kakkerla_Resume.pdf",
+  resumeUrl: assetUrl(resumeAsset.url),
 };
 
 export const navItems = [

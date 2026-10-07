@@ -3,6 +3,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { navItems, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import portrait from "@/assets/harini-portrait.png.asset.json";
+import { assetUrl } from "@/lib/asset-url";
 
 export function Navbar() {
   const [active, setActive] = useState("home");
@@ -44,9 +45,11 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8" aria-label="Main">
         <a href="#home" className="flex items-center gap-2.5">
           <img
-            src={portrait.url}
+            src={assetUrl(portrait.url)}
             alt={profile.name}
-            className="h-10 w-10 rounded-full border border-border/60 object-cover shadow-soft transition-transform duration-300 hover:scale-105"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-full border border-border/60 object-cover shadow-soft transition-transform duration-300 hover:scale-105"
           />
           <span className="font-display text-2xl text-foreground">
             {profile.shortName}
