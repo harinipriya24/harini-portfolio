@@ -165,9 +165,9 @@ export const projects: Project[] = [
 
 export const skillGroups = [
   { title: "Frontend", skills: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"] },
-  { title: "Backend", skills: ["Python", "Flask", "Node.js", "Express.js"] },
-  { title: "Databases", skills: ["MongoDB", "MySQL", "SQL", "Mongoose"] },
-  { title: "AI & Data", skills: ["Python", "Machine Learning", "Data Analysis", "Pandas", "NumPy", "Scikit-learn", "AI/NLP"] },
+  { title: "Backend", skills: ["Flask", "Node.js", "Express.js", "Python"] },
+  { title: "Databases", skills: ["MongoDB", "MySQL", "SQL", "Mongoose", "Python"] },
+  { title: "AI & Data", skills: ["Machine Learning", "Data Analysis", "Pandas", "NumPy", "Scikit-learn", "AI/NLP", "Python"] },
   { title: "Tools", skills: ["Git", "GitHub", "VS Code", "Postman", "Jupyter Notebook", "Vite"] },
 ];
 
