@@ -92,27 +92,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "interviewiq",
-    title: "InterviewIQ",
-    category: "AI + Full-Stack Application",
-    description:
-      "An AI-powered interview preparation platform that helps users analyze resumes, generate interview questions, evaluate answers and track interview performance.",
-    technologies: ["React", "Tailwind CSS", "Flask", "Python", "MongoDB", "AI/NLP"],
-    features: [
-      "Resume upload",
-      "Resume text extraction",
-      "Skill extraction",
-      "ATS score",
-      "Resume suggestions",
-      "AI-generated interview questions",
-      "Answer evaluation",
-      "Performance analytics",
-      "User profile",
-    ],
-    demonstrates: ["AI Integration", "Frontend Development", "Backend APIs", "Database Integration", "Full-Stack Development"],
-    featured: true,
-  },
-  {
     slug: "travelkart",
     title: "TravelKart",
     category: "Full-Stack Travel Booking Platform",
@@ -179,7 +158,6 @@ export const certifications = [
 
 export const achievements = [
   { title: "Strong Academic Performance", text: "CGPA 8.76 / 10 in B.Tech Artificial Intelligence & Data Science." },
-  { title: "AI Application Development", text: "Built InterviewIQ, an AI-powered interview preparation platform." },
   { title: "Full-Stack Development", text: "Built TravelKart using React, Node.js, Express.js and MongoDB." },
   { title: "Real-World Development", text: "Developed and deployed a professional business website for Raghavendra Auto Finance." },
   { title: "Hands-On Learning", text: "Gained practical experience through internships, job simulations and development projects." },
