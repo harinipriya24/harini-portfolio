@@ -5,9 +5,30 @@ import { toast } from "sonner";
 import portrait from "@/assets/harini-portrait.png.asset.json";
 import { assetUrl } from "@/lib/asset-url";
 
-export function downloadResume() {
-  if (profile.resumeUrl) window.open(profile.resumeUrl, "_blank", "noopener");
-  else toast("Resume coming soon", { description: "The resume file will be available here shortly." });
+export async function downloadResume() {
+  if (!profile.resumeUrl) {
+    toast("Resume coming soon", { description: "The resume file will be available here shortly." });
+    return;
+  }
+
+  try {
+    const response = await fetch(profile.resumeUrl);
+    if (!response.ok) throw new Error("Resume download failed");
+
+    const resumeBlob = await response.blob();
+    const downloadUrl = URL.createObjectURL(resumeBlob);
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = "Harini_Priya_Resume.pdf";
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 30_000);
+  } catch {
+    toast.error("Could not download your resume", {
+      description: "Please try again or contact me by email.",
+    });
+  }
 }
 
 export function Hero() {
