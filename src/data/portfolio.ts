@@ -1,4 +1,4 @@
-import resumeAsset from "@/assets/resume.pdf.asset.json";
+import resumeAsset from "@/assets/harinipriya-resume.pdf.asset.json";
 import { assetUrl } from "@/lib/asset-url";
 
 // Edit your personal links here.
